@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: CarListComponent },
+  { path: 'car-list/:state', pathMatch: 'full', component: CarListComponent },
   { path: 'car-list/:state', component: CarListComponent },
   { path: 'brands/:id', component: CarListComponent },
   { path: 'car-detail/:id', component: CarDetailComponent },
