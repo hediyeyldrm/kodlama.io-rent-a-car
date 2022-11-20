@@ -1,0 +1,15 @@
+<div class="cardStyle">
+  <div class="card" *ngFor="let data of carLists">
+    <img src={{data.imagePath}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{data.model}}</h5>
+      <p class="card-text">{{data.description}}</p>
+      <div class="col">
+        <button class="btn btn-outline-success" (click)="clickDetail(data)"
+          routerLink="/car-detail/{{data.id}}">Detail</button>
+        <button class="btn btn-outline-info">Update</button>
+        <button class="btn btn-outline-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
