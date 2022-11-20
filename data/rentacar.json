@@ -1,0 +1,96 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "name": "BMW"
+    },
+    {
+      "id": 2,
+      "name": "Mercedes"
+    },
+    {
+      "id": 3,
+      "name": "Volvo"
+    },
+    {
+      "id": 4,
+      "name": "Togg"
+    },
+    {
+      "name": "Fiat",
+      "id": 5
+    }
+  ],
+  "car-list": [
+    {
+      "id": 1,
+      "brandId": 1,
+      "model": "BMW i8",
+      "year": 2010,
+      "color": "black",
+      "price": 10000,
+      "isSold": false,
+      "state": 1,
+      "description": "BMW i8 2022 model orange color",
+      "imagePath": "https://carwow-uk-wp-3.imgix.net/bmw-i8-roadster-orange-driving-top-1.jpg"
+    },
+    {
+      "id": 2,
+      "brandId": 2,
+      "model": "Mercedes GLA",
+      "year": 2022,
+      "color": "white",
+      "price": 12000,
+      "isSold": false,
+      "state": 1,
+      "description": "Mercedes GLA 2022 model",
+      "imagePath": "https://www.endetayli.com/wp-content/uploads/2022/05/sifir-mercedes-yeni-gla-200-amg-2022-model.png"
+    },
+    {
+      "id": 3,
+      "brandId": 3,
+      "model": "Volvo XC90",
+      "year": 2012,
+      "color": "red",
+      "price": 13000,
+      "isSold": false,
+      "state": 2,
+      "description": "Volvo XC90 2018 model",
+      "imagePath": "https://cngzotomotiv.com.tr/wp-content/uploads/2022/07/2022-volvo-xc90-recharge-t8-108-1656508649.jpg"
+    },
+    {
+      "id": 4,
+      "brandId": 4,
+      "model": "Togg 1.6",
+      "year": 2013,
+      "color": "blue",
+      "price": 14000,
+      "isSold": false,
+      "state": 1,
+      "description": "Togg 1.6 2022 model",
+      "imagePath": "https://www.lojiport.com/d/news/37805.jpg"
+    },
+    {
+      "brandId": 1,
+      "model": "BMW 8",
+      "year": 2022,
+      "color": "Black",
+      "price": 20000,
+      "state": 1,
+      "description": "BMW 8 Series Grand Coupe",
+      "imagePath": "https://www.donanimhaber.com/images/images/galeri/5040/yeni-bmw-8-serisi-gran-coupe-tanitildi-5040-1.jpg",
+      "id": 5
+    },
+    {
+      "brandId": 5,
+      "model": "Fiat",
+      "year": 2022,
+      "color": "Orange",
+      "price": 1200,
+      "state": 1,
+      "description": "Fiat Egea Cross 1.3 Multijet 95 HP",
+      "imagePath": "https://otomobil.fiat.com.tr/content/dam/fiat/TR/yeni-egea/listing/cross/EGEA_CROSS_PLUS_PAPRIKA_KESFET_606x340px1.jpg",
+      "id": 6
+    }
+  ]
+}
