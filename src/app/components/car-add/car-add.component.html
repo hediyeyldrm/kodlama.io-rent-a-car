@@ -1,0 +1,60 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Add Car</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="carAddForm">
+
+          <label for="brandId"><b>Brand Id</b></label>
+          <div class="form-group">
+            <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Brand id" />
+          </div>
+
+          <label for="model"><b>Model</b></label>
+          <div class="form-group">
+            <input type="text" id="model" formControlName="model" class="form-control" placeholder="Model" />
+          </div>
+
+          <label for="year"><b>Year</b></label>
+          <div class="form-group">
+            <input type="number" id="year" formControlName="year" class="form-control" placeholder="Year" />
+          </div>
+
+          <label for="color"><b>Color</b></label>
+          <div class="form-group">
+            <input type="text" id="color" formControlName="color" class="form-control" placeholder="Color" />
+          </div>
+
+          <label for="price"><b>Price</b></label>
+          <div class="form-group">
+            <input type="number" id="price" formControlName="price" class="form-control" placeholder="Price" />
+          </div>
+
+          <label for="state"><b>State</b></label>
+          <div class="form-group">
+            <input type="number" id="state" formControlName="state" class="form-control" placeholder="State" />
+          </div>
+
+          <label for="description"><b>Description</b></label>
+          <div class="form-group">
+            <input type="text" id="description" formControlName="description" class="form-control"
+              placeholder="Description" />
+          </div>
+
+          <label for="imagePath"><b>Image Url</b></label>
+          <div class="form-group">
+            <input type="string" id="imagePath" formControlName="imagePath" class="form-control"
+              placeholder="Image Url" />
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-success" (click)="add()">ADD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
