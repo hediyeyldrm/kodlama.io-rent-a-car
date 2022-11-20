@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">All Brand List</li>
+  <li (click)="selectBrands(data)" routerLink="/brands/{{data.id}}" class="list-group-item" *ngFor="let data of brands">
+    {{data.name}}
+  </li>
+</ul>
+<h2>{{brandsName}}</h2>
+<div class="d-grid gap-2">
+  <button class="btn btn-warning" type="button" routerLink="car-add">Add Car</button>
+  <button class="btn btn-warning" type="button" routerLink="brand-add">Add Brand</button>
+</div>
