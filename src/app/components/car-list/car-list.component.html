@@ -8,7 +8,7 @@
         <button class="btn btn-outline-success" (click)="clickDetail(data)"
           routerLink="/car-detail/{{data.id}}">Detail</button>
         <button class="btn btn-outline-info">Update</button>
-        <button class="btn btn-outline-danger">Delete</button>
+        <button class="btn btn-outline-danger" (click)="delete(data)">Delete</button>
       </div>
     </div>
   </div>

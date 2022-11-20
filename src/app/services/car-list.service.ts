@@ -30,4 +30,8 @@ export class CarListService {
   add(data: CarListModel): Observable<CarListModel> {
     return this.httpClient.post<CarListModel>(this.apiUrl, data);
   }
+
+  delete(data: any): Observable<CarListModel> {
+    return this.httpClient.delete<CarListModel>(this.apiUrl + '/' + data.id);
+  }
 }

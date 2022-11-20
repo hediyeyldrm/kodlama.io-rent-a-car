@@ -71,17 +71,6 @@
       "imagePath": "https://www.lojiport.com/d/news/37805.jpg"
     },
     {
-      "brandId": 1,
-      "model": "BMW 8",
-      "year": 2022,
-      "color": "Black",
-      "price": 20000,
-      "state": 1,
-      "description": "BMW 8 Series Grand Coupe",
-      "imagePath": "https://www.donanimhaber.com/images/images/galeri/5040/yeni-bmw-8-serisi-gran-coupe-tanitildi-5040-1.jpg",
-      "id": 5
-    },
-    {
       "brandId": 5,
       "model": "Fiat",
       "year": 2022,
@@ -91,6 +80,17 @@
       "description": "Fiat Egea Cross 1.3 Multijet 95 HP",
       "imagePath": "https://otomobil.fiat.com.tr/content/dam/fiat/TR/yeni-egea/listing/cross/EGEA_CROSS_PLUS_PAPRIKA_KESFET_606x340px1.jpg",
       "id": 6
+    },
+    {
+      "brandId": 1,
+      "model": "BMW",
+      "year": 2022,
+      "color": "Black",
+      "price": 20000,
+      "state": 1,
+      "description": "BMW 8 Series Grand Coupe",
+      "imagePath": "https://www.donanimhaber.com/images/images/galeri/5040/yeni-bmw-8-serisi-gran-coupe-tanitildi-5040-1.jpg",
+      "id": 7
     }
   ]
 }

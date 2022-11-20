@@ -41,4 +41,8 @@ export class CarListComponent implements OnInit {
   clickDetail(data: any) {
     console.log(data);
   }
+  delete(data: any) {
+    this.carLists = this.carLists.filter((x) => x !== data);
+    this.CarListService.delete(data).subscribe();
+  }
 }
