@@ -1,0 +1,9 @@
+<div class="card mb-3" *ngFor="let data of carDetail">
+  <img src={{data.imagePath}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>Model:</b> {{data.model}}</h5>
+    <h5 class="card-title"><b>Yıl:</b> {{data.year}}</h5>
+    <p class="card-text"><b>Açıklama:</b> {{data.description}}</p>
+    <p class="card-text"><b>Fiyat:</b> {{data.price}} $ </p>
+  </div>
+</div>
