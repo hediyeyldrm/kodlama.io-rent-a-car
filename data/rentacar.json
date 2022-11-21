@@ -89,6 +89,17 @@
       "description": "BMW 8 Series Grand Coupe",
       "imagePath": "https://www.donanimhaber.com/images/images/galeri/5040/yeni-bmw-8-serisi-gran-coupe-tanitildi-5040-1.jpg",
       "id": 9
+    },
+    {
+      "brandId": "2",
+      "model": "Mercedes-AMG G 63 ",
+      "year": "2022",
+      "color": "",
+      "price": "15000",
+      "state": "1",
+      "description": "Kendini yansıtan tasarıma sahip.",
+      "imagePath": "https://cdn.motor1.com/images/mgl/vrXB4/s1/2021-mercedes-amg-g63-off-road-feature.jpg",
+      "id": 10
     }
   ]
 }
