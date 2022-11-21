@@ -16,6 +16,7 @@ export class CarUpdateComponent implements OnInit {
   carDetails: CarListModel[] = [];
   car!: CarListModel;
   brands!: BrandsModel[];
+  carLists: CarListModel[] = [];
   constructor(
     private carListService: CarListService,
     private formBuilder: FormBuilder,
@@ -61,5 +62,10 @@ export class CarUpdateComponent implements OnInit {
     this.carListService
       .update(id, this.carUpdateForm.value)
       .subscribe(() => console.log('update'));
+  }
+
+  delete(data: any) {
+    this.carLists = this.carLists.filter((x) => x !== data);
+    this.carListService.delete(data).subscribe();
   }
 }

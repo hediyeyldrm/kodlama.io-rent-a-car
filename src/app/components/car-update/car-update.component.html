@@ -1,4 +1,5 @@
 <div class="content">
+  <button class="btn btn-secondary" routerLink="">BACK</button>
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
@@ -17,8 +18,8 @@
           <div class="mb-3">
             <label for="brandId">Brand</label>
             <div class="form-group">
-              <select class="form-select" aria-label="Default select example" id="brandId"
-                formControlName="brandId" class="form-control">
+              <select class="form-select" aria-label="Default select example" id="brandId" formControlName="brandId"
+                class="form-control">
                 <option value={{data.id}} *ngFor="let data of brands" disabled selected>{{data.name}}</option>
               </select>
             </div>
@@ -70,9 +71,11 @@
             </div>
           </div>
           <div class="card-footer">
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button type="button" class="btn btn-success" (click)="update(1)">UPDATE</button>
+            <div class="d-grid gap-3 d-md-flex justify-content-md-center" *ngFor="let data of carDetails">
+              <button type="button" class="btn btn-success btn-lg" (click)="update(data.id)">UPDATE</button>
+              <button class="btn btn-danger btn-lg" (click)="delete(data.id)">DELETE</button>
             </div>
+
           </div>
         </form>
       </div>
