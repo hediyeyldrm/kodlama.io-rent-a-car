@@ -1,0 +1,84 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Update Car</h5>
+      </div>
+      <div class="card-body">
+        <!-- formGroup adına carAddFrom vererek ts deki değişken maplenmiş oluyor -->
+        <form [formGroup]="carUpdateForm" *ngIf="carUpdateForm">
+          <div class="mb-3">
+            <label for="model">Model Name</label>
+            <div class="form-group">
+              <input type="text" id="model" formControlName="model" class="form-control" placeholder="Model" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="brandId">Brand</label>
+            <div class="form-group">
+              <select class="form-select" aria-label="Default select example" id="brandId"
+                formControlName="brandId" class="form-control">
+                <option value={{data.id}} *ngFor="let data of brands" disabled selected>{{data.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="year">Year</label>
+            <div class="form-group">
+              <input type="text" id="year" formControlName="year" class="form-control" placeholder="Year" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="color">Color</label>
+            <div class="form-group">
+              <input type="text" id="color" formControlName="color" class="form-control" placeholder="Color" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price">Price</label>
+            <div class="form-group input-group">
+              <span class="input-group-text">$</span>
+              <input type="text" class="form-control" id="price" formControlName="price"
+                aria-label="Amount (to the nearest dollar)" value="">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="imagePath">Image Path</label>
+            <div class="form-group">
+              <input type="text" id="imagePath" formControlName="imagePath" class="form-control"
+                placeholder="Type Image Path" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price">State</label>
+            <div class="form-group">
+              <select class="form-control" id="validationDefault04" formControlName="state" required
+                style="color: #999;">
+                <option value="" selected disabled>Select Availity</option>
+                <option value="1">Avaible</option>
+                <option value="2">Unavaible</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description">Description</label>
+            <div class="form-group">
+              <textarea type="text" id="description" formControlName="description" class="form-control"
+                placeholder="Description"></textarea>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="button" class="btn btn-success" (click)="update(1)">UPDATE</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
