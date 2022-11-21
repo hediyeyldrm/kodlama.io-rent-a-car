@@ -1,3 +1,5 @@
+import { BrandsService } from './../../services/brands.service';
+import { BrandsModel } from './../../models/BrandsModel';
 import { CarListService } from './../../services/car-list.service';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -14,13 +16,16 @@ import {
 })
 export class CarAddComponent implements OnInit {
   carAddForm!: FormGroup;
+  carBrands: BrandsModel[] = [];
   constructor(
     private formBuilder: FormBuilder,
-    private carListService: CarListService
+    private carListService: CarListService,
+    private brandsService: BrandsService
   ) {}
 
   ngOnInit(): void {
     this.createCarAddForm();
+    this.getCarsBrands();
   }
 
   createCarAddForm() {
@@ -46,5 +51,12 @@ export class CarAddComponent implements OnInit {
         console.log(response);
       });
     }
+  }
+
+  getCarsBrands() {
+    this.brandsService.getBrands().subscribe((response) => {
+      console.log(response);
+      this.carBrands = response;
+    });
   }
 }

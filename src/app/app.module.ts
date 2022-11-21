@@ -10,6 +10,7 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
     CarDetailComponent,
     CarAddComponent,
     BrandAddComponent,
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,

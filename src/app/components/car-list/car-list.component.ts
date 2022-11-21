@@ -20,8 +20,10 @@ export class CarListComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       if (params['id']) {
         this.getCarsByBrandId(params['id']);
-      } else {
+      } else if (params['state']) {
         this.getCarList(params['state']);
+      } else {
+        this.getCarList(1);
       }
     });
   }
@@ -41,6 +43,7 @@ export class CarListComponent implements OnInit {
   clickDetail(data: any) {
     console.log(data);
   }
+
   delete(data: any) {
     this.carLists = this.carLists.filter((x) => x !== data);
     this.CarListService.delete(data).subscribe();
