@@ -1,3 +1,4 @@
+import { CarFilterPipe } from './../../pipes/car-filter.pipe';
 import { CarListService } from './../../services/car-list.service';
 import { CarListModel } from './../../models/CarListModel';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarListComponent implements OnInit {
   carLists: CarListModel[] = [];
+  carFilterText: string = '';
 
   constructor(
     private CarListService: CarListService,
@@ -22,6 +24,8 @@ export class CarListComponent implements OnInit {
         this.getCarsByBrandId(params['id']);
       } else if (params['state']) {
         this.getCarList(params['state']);
+      } else if (params['colorId']) {
+        this.getCarsByColorId(params['colorId']);
       } else {
         this.getCarList(1);
       }
@@ -30,6 +34,12 @@ export class CarListComponent implements OnInit {
 
   getCarList(state: number) {
     this.CarListService.getCarList(state).subscribe(
+      (data) => (this.carLists = data)
+    );
+  }
+
+  getCarsByColorId(id: number) {
+    this.CarListService.getCarsByColorId(id).subscribe(
       (data) => (this.carLists = data)
     );
   }

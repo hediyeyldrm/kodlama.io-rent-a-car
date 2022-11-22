@@ -2,6 +2,23 @@ ul.list-group {
   margin-top: 10px;
 }
 
-li.list-group-item {
+li.list-group-item:hover {
   cursor: pointer;
+  /* background-color:rgb(186, 195, 197); */
+}
+
+h6 {
+  margin: 0;
+}
+
+.form-group {
+  margin-top: 12px;
+}
+
+.accordion{
+  margin-top: 10px;
+}
+
+.accordion-button {
+  background-color:#d1e7dd;
 }

@@ -1,10 +1,39 @@
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success">All Brand List</li>
-  <li (click)="selectBrands(data)" routerLink="/brands/{{data.id}}" class="list-group-item" *ngFor="let data of brands">
+<div class="form-group">
+  <input type="text" class="form-control" id="filter" [(ngModel)]="brandFilterText" placeholder="Search for Brand">
+</div>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne">
+       <b>All Brand List</b>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <li (click)="selectBrands(data)" routerLink="/brands/{{data.id}}" class="list-group-item"
+          *ngFor="let data of brands | brandFilter: brandFilterText">
+          <b>{{data.name}}</b>
+          <hr>
+        </li>
+        <h2>{{brandsName}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ul class="list-group">
+  <h6 class="list-group-item list-group-item-success">All Brand List</h6>
+  <li (click)="selectBrands(data)" routerLink="/brands/{{data.id}}" class="list-group-item"
+    *ngFor="let data of brands | brandFilter: brandFilterText">
     {{data.name}}
   </li>
 </ul>
-<h2>{{brandsName}}</h2>
+<h2>{{brandsName}}</h2> -->
+
+
 <!-- <div class="d-grid gap-2">
   <button class="btn btn-warning" type="button" routerLink="car-add">Add Car</button>
   <button class="btn btn-warning" type="button" routerLink="brand-add">Add Brand</button>

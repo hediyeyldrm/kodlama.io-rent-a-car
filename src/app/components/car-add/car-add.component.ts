@@ -1,3 +1,5 @@
+import { ColorsModel } from './../../models/ColorsModel';
+import { ColorsService } from './../../services/colors.service';
 import { BrandsService } from './../../services/brands.service';
 import { BrandsModel } from './../../models/BrandsModel';
 import { CarListService } from './../../services/car-list.service';
@@ -17,15 +19,18 @@ import {
 export class CarAddComponent implements OnInit {
   carAddForm!: FormGroup;
   carBrands: BrandsModel[] = [];
+  carColors: ColorsModel[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private carListService: CarListService,
-    private brandsService: BrandsService
+    private brandsService: BrandsService,
+    private colorsService: ColorsService
   ) {}
 
   ngOnInit(): void {
     this.createCarAddForm();
     this.getCarsBrands();
+    this.getColors()
   }
 
   createCarAddForm() {
@@ -33,7 +38,7 @@ export class CarAddComponent implements OnInit {
       brandId: ['', Validators.required],
       model: ['', Validators.required],
       year: ['', [Validators.required, Validators.max(4)]],
-      color: ['', Validators.required],
+      colorId: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
       state: ['', Validators.required],
       description: ['', Validators.required],
@@ -57,6 +62,12 @@ export class CarAddComponent implements OnInit {
     this.brandsService.getBrands().subscribe((response) => {
       console.log(response);
       this.carBrands = response;
+    });
+  }
+
+  getColors() {
+    this.colorsService.getColors().subscribe((response) => {
+      this.carColors = response;
     });
   }
 }

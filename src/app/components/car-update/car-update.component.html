@@ -20,7 +20,7 @@
             <div class="form-group">
               <select class="form-select" aria-label="Default select example" id="brandId" formControlName="brandId"
                 class="form-control">
-                <option value={{data.id}} *ngFor="let data of brands" disabled selected>{{data.name}}</option>
+                <option value={{data.id}} *ngFor="let data of brands" selected>{{data.name}}</option>
               </select>
             </div>
           </div>
@@ -33,7 +33,10 @@
           <div class="mb-3">
             <label for="color">Color</label>
             <div class="form-group">
-              <input type="text" id="color" formControlName="color" class="form-control" placeholder="Color" />
+              <select class="form-select" aria-label="Default select example" id="colorId" formControlName="colorId"
+                class="form-control">
+                <option value={{data.id}} *ngFor="let data of colors" selected>{{data.colorName}}</option>
+              </select>
             </div>
           </div>
           <div class="mb-3">

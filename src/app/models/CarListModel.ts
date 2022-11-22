@@ -3,7 +3,7 @@ export interface CarListModel {
   brandId: number;
   model: string;
   year: number;
-  color: string;
+  colorId: number;
   price: number;
   isSold: boolean;
   state: number;

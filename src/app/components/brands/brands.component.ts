@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class BrandsComponent implements OnInit {
   brands: BrandsModel[] = [];
   brandsName!: string;
+  brandFilterText: string = '';
+
   constructor(
     private brandsService: BrandsService,
     private activatedRoute: ActivatedRoute
