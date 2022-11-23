@@ -1,3 +1,5 @@
+import { ColorsModel } from './../../models/ColorsModel';
+import { BrandsModel } from './../../models/BrandsModel';
 import { CarFilterPipe } from './../../pipes/car-filter.pipe';
 import { CarListService } from './../../services/car-list.service';
 import { CarListModel } from './../../models/CarListModel';
@@ -11,7 +13,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarListComponent implements OnInit {
   carLists: CarListModel[] = [];
+  brands: BrandsModel[] = [];
+  colors: ColorsModel[] = [];
   carFilterText: string = '';
+  currentBrand: BrandsModel;
+  currentColor: ColorsModel;
 
   constructor(
     private CarListService: CarListService,
@@ -20,16 +26,12 @@ export class CarListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) {
-        this.getCarsByBrandId(params['id']);
-      } else if (params['state']) {
-        this.getCarList(params['state']);
-      } else if (params['colorId']) {
-        this.getCarsByColorId(params['colorId']);
-      } else {
-        this.getCarList(1);
-      }
+      this.getCars();
     });
+  }
+
+  getCars() {
+    this.CarListService.getCars().subscribe((data) => (this.carLists = data));
   }
 
   getCarList(state: number) {

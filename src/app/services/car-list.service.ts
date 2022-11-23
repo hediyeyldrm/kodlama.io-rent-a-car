@@ -1,3 +1,5 @@
+import { ColorsModel } from './../models/ColorsModel';
+import { BrandsModel } from './../models/BrandsModel';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +10,14 @@ import { CarListModel } from '../models/CarListModel';
 })
 export class CarListService {
   apiUrl = 'http://localhost:3000/car-list';
+  selectedBrand: BrandsModel;
+  selectedColor: ColorsModel;
+  queryPath: string = '';
   constructor(private httpClient: HttpClient) {}
+
+  getCars(): Observable<CarListModel[]> {
+    return this.httpClient.get<CarListModel[]>(this.createApiUrl());
+  }
 
   getCarList(state: number): Observable<CarListModel[]> {
     return this.httpClient.get<CarListModel[]>(
@@ -17,7 +26,9 @@ export class CarListService {
   }
 
   getCarsByColorId(id: number): Observable<CarListModel[]> {
-    return this.httpClient.get<CarListModel[]>(this.apiUrl + '?colorId=' + id);
+    return this.httpClient.get<CarListModel[]>(
+      this.apiUrl + '?colorId=' + id + '&state=1'
+    );
   }
 
   getCarsByBrandId(id: number): Observable<CarListModel[]> {
@@ -41,5 +52,38 @@ export class CarListService {
 
   delete(data: any): Observable<CarListModel> {
     return this.httpClient.delete<CarListModel>(this.apiUrl + '/' + data.id);
+  }
+
+  setSelectedBrand(brand) {
+    this.selectedBrand = brand;
+  }
+
+  setSelectedColor(color) {
+    this.selectedColor = color;
+  }
+
+  createApiUrl() {
+    if (this.selectedBrand) {
+      this.queryPath = this.apiUrl + '?brandId=' + this.selectedBrand.id;
+    }
+
+    if (this.selectedColor) {
+      this.queryPath = this.apiUrl + '?colorId=' + this.selectedColor.id;
+    }
+
+    if (this.selectedBrand && this.selectedColor) {
+      this.queryPath =
+        this.apiUrl +
+        '?brandId=' +
+        this.selectedBrand.id +
+        '&colorId=' +
+        this.selectedColor.id;
+    }
+
+    if (!this.selectedBrand && !this.selectedColor) {
+      this.queryPath = this.apiUrl + '?state=1';
+    }
+
+    return this.queryPath;
   }
 }

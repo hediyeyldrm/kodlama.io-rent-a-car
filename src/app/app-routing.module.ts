@@ -11,14 +11,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarListComponent },
-  { path: 'car-list/:state', component: CarListComponent },
+  { path: 'car-list', component: CarListComponent },
   { path: 'brands/:id', component: CarListComponent },
   { path: 'car-detail/:id', component: CarDetailComponent },
   { path: 'car-add', component: CarAddComponent },
   { path: 'brand-add', component: BrandAddComponent },
   { path: 'car-update/:id', component: CarUpdateComponent },
   { path: 'brand-update', component: BrandUpdateComponent },
-  {path: "car-color/:colorId", component: CarListComponent}
+  { path: 'car-color/:colorId', component: CarListComponent },
+  { path: 'filter/:brandId/:colorId', component: CarListComponent },
 ];
 
 @NgModule({

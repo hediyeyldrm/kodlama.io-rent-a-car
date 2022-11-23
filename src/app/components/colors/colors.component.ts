@@ -15,7 +15,8 @@ export class ColorsComponent implements OnInit {
   colorsName!: string;
   constructor(
     private colorsService: ColorsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private carListService: CarListService
   ) {}
 
   ngOnInit(): void {
@@ -28,5 +29,6 @@ export class ColorsComponent implements OnInit {
 
   selectColor(data: any) {
     this.colorsName = data.colorName;
+    this.carListService.setSelectedColor(data);
   }
 }

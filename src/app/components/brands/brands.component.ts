@@ -1,3 +1,4 @@
+import { CarListService } from './../../services/car-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { BrandsModel } from './../../models/BrandsModel';
 import { BrandsService } from './../../services/brands.service';
@@ -15,7 +16,8 @@ export class BrandsComponent implements OnInit {
 
   constructor(
     private brandsService: BrandsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private carListService: CarListService
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +32,6 @@ export class BrandsComponent implements OnInit {
 
   selectBrands(data: any) {
     this.brandsName = data.name;
+    this.carListService.setSelectedBrand(data);
   }
 }
